@@ -8,8 +8,8 @@ export const Navbar = () => {
 				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
+				<Link to="/ships">
+					<button className="btn btn-primary">My ships</button>
 				</Link>
 			</div>
 		</nav>
