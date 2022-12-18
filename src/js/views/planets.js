@@ -5,9 +5,9 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
 
-export const Ships = () => {
+export const Planets = () => {
  const {store, actions} = useContext(Context);
- const ships = store.ships;
+ const planets = store.planets;
  
 
    
@@ -15,16 +15,16 @@ export const Ships = () => {
   return (
    <div>
 
-		{console.log(ships)};
+		{console.log(planets)};
 
 
-      { ships.map((ship,index) => {
+      { planets.map((planet,index) => {
 
 		return (
 			  <div key={index} className="card">
           <div className="card-body">
-            <h5 className="card-title">{ship.name}</h5>
-            <p className="card-text">{ship.manufacturer}</p>
+            <h5 className="card-title">{planet.name}</h5>
+            <p className="card-text">{planet.climate}</p>
             <a href="#" className="btn btn-primary">
               Go somewhere
             </a>
