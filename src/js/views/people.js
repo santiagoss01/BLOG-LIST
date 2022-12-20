@@ -13,26 +13,7 @@ export const People = () => {
    
 
   return (
-   <div>
-
-		{console.log(people)};
-
-
-      { people.map((car,index) => {
-
-		return (
-			  <div key={index} className="card">
-          <div className="card-body">
-            <h5 className="card-title">{car.name}</h5>
-            <p className="card-text">{car.homeworld}</p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div>)
-     
-   
-})}
-</div>)
+    <Cards element = {people} title = {element.name} text = {element.gender}/>
+)
   
 };

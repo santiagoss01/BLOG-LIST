@@ -2,37 +2,32 @@ import React, { useContext } from "react";
 // import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
+import{Cards}from "../component/Cards.jsx"
 
 import "../../styles/demo.css";
+import { element } from "prop-types";
 
 export const Films = () => {
  const {store, actions} = useContext(Context);
  const films = store.films;
- 
+ console.log(films);
+ //Hacer use effect con condicional de loading.
+ //Hacer el map de Films y dentro del return llama la card.
+
 
    
 
   return (
-   <div>
+   <div className="d-flex 
+   ">
 
-		{console.log(films)};
+  {films.map((film, index)=>{
 
-
-      { films.map((film,index) => {
-
-		return (
-			  <div key={index} className="card">
-          <div className="card-body">
-            <h5 className="card-title">{film.title}</h5>
-            <p className="card-text">{film.director}</p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div>)
-     
-   
-})}
-</div>)
-  
+    return( <Cards key={index} title = {film.title} text = {film.director}/>)
+  })}
+  </div>)
 };
+ 
+  
+  
+
