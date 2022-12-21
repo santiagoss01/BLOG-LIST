@@ -15,10 +15,10 @@ export const Cards = (props) => {
   
    
     <div className="card col-12 col-md-3 flex-row flex-md-column p-0 m-4">
-      <img src={props.image} class="card-img-top"/>
-      <div class="card-body">
-        <h5 class="card-title">{props.title}</h5>
-        <p class="card-text">
+      <img src={props.image} className="card-img-top"/>
+      <div className="card-body">
+        <h5 className="card-title">{props.title}</h5>
+        <p className="card-text">
          {props.text}
         </p>
       </div>

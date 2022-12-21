@@ -24,7 +24,7 @@ const injectContext = PassedComponent => {
 useEffect(()=>{
 
 
-	state.actions.getfilms();
+    // state.actions.getfilms();
 	state.actions.getpeople();
 	state.actions.getplanets();
 	state.actions.getships();

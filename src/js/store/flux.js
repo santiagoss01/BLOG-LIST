@@ -10,13 +10,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		},
 		actions: {
-			 getfilms: async () =>{
-				const response = await fetch(`${URL}films/`);
-				const data = await response.json();
-				
-				setStore( {films: data.results,});
-			 },
-			 getpeople : async () =>{
+
+			insertFilms: (data) => {        
+				setStore({ films: getStore().films.concat(data.results), next_page: data.next });
+			  },
+			 
+			
+			getpeople : async () =>{
 				const response = await fetch(`${URL}people/`);
 				const data = await response.json();
 				setStore( {people: data.results,});},

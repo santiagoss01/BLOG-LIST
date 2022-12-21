@@ -1,33 +1,50 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 // import { Link } from "react-router-dom";
+
 
 import { Context } from "../store/appContext";
 import{Cards}from "../component/Cards.jsx"
 
 import "../../styles/demo.css";
+const URL = "https://swapi.dev/api/"
 
 
 export const Films = () => {
  const {store, actions} = useContext(Context);
- const films = store.films;
-
-
+ const[loading, setLoading] = useState (false);
  
 
 
+const getfilms = async () =>{
+
+  setLoading (true);
+
+const response = await fetch(`${URL}films/`);
+const data = await response.json();
+  
+actions.insertFilms(data);
+
+setLoading (false);
+
+};
 
 
- console.log(films);
- //Hacer use effect con condicional de loading.
- //Hacer el map de Films y dentro del return llama la card.
+
+ const filmes = store.films;
 
 
+
+useEffect(()=>{
+  getfilms();
+
+ },[]);
    
 
   return (
  <>
+  {loading ? <p>Estoy cargando</p>:
 
-  {films.map((film, index)=>{
+  filmes.map((film, index)=>{
 
    
 
@@ -39,4 +56,5 @@ export const Films = () => {
  
   
   
-console.log(<Cards/>);
+
+
