@@ -3,31 +3,32 @@ import React, { useContext } from "react";
 
 import { Context } from "../store/appContext";
 
-import "../../styles/demo.css";
+import "../../styles/cards.css";
 
 export const Cards = (props) => {
- const {store, actions} = useContext(Context);
 
- 
+
 
    
 
   return (
-   <div>
-
-	
-			  <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{props.title}</h5>
-            <p className="card-text">{props.text}</p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div>
-     
+  
    
+    <div className="card col-12 col-md-3 flex-row flex-md-column p-0 m-4">
+      <img src={props.image} class="card-img-top"/>
+      <div class="card-body">
+        <h5 class="card-title">{props.title}</h5>
+        <p class="card-text">
+         {props.text}
+        </p>
+      </div>
+    </div>
+  
 
-</div>)
+
+
+    
+    )
+
   
 };

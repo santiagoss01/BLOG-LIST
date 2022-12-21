@@ -13,7 +13,7 @@ export const People = () => {
    
 
   return (
-    <Cards element = {people} title = {element.name} text = {element.gender}/>
+    <Cards  title = {element.name} text = {element.gender}/>
 )
   
 };
