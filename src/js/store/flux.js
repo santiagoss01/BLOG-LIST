@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			ships: [],
 			films:[],
 			planets:[],
+			next_page:"",
 
 		},
 		actions: {
@@ -14,22 +15,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			insertFilms: (data) => {        
 				setStore({ films: getStore().films.concat(data.results), next_page: data.next });
 			  },
+			  
+			  insertPeople:(data) => {        
+				setStore({ people: getStore().people.concat(data.results), next_page: data.next });
+			  },
 			 
-			
-			getpeople : async () =>{
-				const response = await fetch(`${URL}people/`);
-				const data = await response.json();
-				setStore( {people: data.results,});},
+			  insertPlanets:(data) => {        
+				setStore({ planets: getStore().planets.concat(data.results), next_page: data.next });
+			  },
 
-			 getplanets : async () =>{
-				const response = await fetch(`${URL}planets/`);
-				const data = await response.json();
-				setStore( {planets: data.results,});},
-
-			 getships :  async () =>{
-				const response = await fetch(`${URL}starships/`);
-				const data = await response.json();
-				setStore( {ships: data.results,});},
+			  insertShips:(data) => {        
+				setStore({ ships: getStore().ships.concat(data.results), next_page: data.next });
+			  },
 
 			
 		}
