@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import{Spinner} from "../component/Spinner.jsx";
 
 import { Context } from "../store/appContext";
+import { Header } from "../component/Header.jsx";
 
 
 import "../../styles/demo.css";
@@ -46,6 +47,11 @@ export const Planets = () => {
  
    return (
   <>
+   <Header/>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
    {loading ? <Spinner/>:
  
    planets.map((pl, index)=>{
@@ -53,8 +59,8 @@ export const Planets = () => {
     
  
      return(
-      <div className="container ml-8 d-flex my-10">
-      <Cards key={index} image={`https://starwars-visualguide.com/assets/img/planets/${index+1}.jpg`}title = {pl.name} text = {pl.climate} />
+      <div key={index} className="container ml-8 d-flex my-10">
+      <Cards image={`https://starwars-visualguide.com/assets/img/planets/${index+1}.jpg`}title = {pl.name} text = {pl.climate} />
       </div>)
    })}
       <div className="text-center my-4">

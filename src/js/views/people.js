@@ -3,6 +3,7 @@ import React, {useState, useContext, useEffect } from "react";
 import{Spinner} from "../component/Spinner.jsx"
 
 import { Context } from "../store/appContext";
+import { Header } from "../component/Header.jsx";
 
 
 import "../../styles/demo.css";
@@ -47,6 +48,11 @@ export const People = () => {
  
    return (
   <>
+   <Header/>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
    {loading ? <Spinner/>:
  
    characters.map((char, index)=>{
@@ -54,8 +60,8 @@ export const People = () => {
     
  
      return( 
-      <div className="container ml-8 d-flex my-10">
-       <Cards key={index} image={`https://starwars-visualguide.com/assets/img/characters/${index+1}.jpg`}title = {char.name} text = {char.birth_year}
+      <div key={index} className="container ml-8 d-flex my-10">
+       <Cards image={`https://starwars-visualguide.com/assets/img/characters/${index+1}.jpg`}title = {char.name} text = {char.birth_year}
         />
          
        </div>)

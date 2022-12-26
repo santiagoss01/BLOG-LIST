@@ -25,9 +25,11 @@
     
 
 #Spinner_container{
-    margin-left: 380px;
-    width: 800px;
-    height: 800px;
+    align-content: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 500px;
 }
 
 h6{

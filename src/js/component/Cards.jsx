@@ -1,15 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 // import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
 import "../../styles/cards.css";
 
+import { AiOutlineHeart } from "react-icons/ai";
+
 export const Cards = (props) => {
 
 const handleOnErrorImg = (e) => {
     e.target.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
 };
+
+const {store, actions} = useContext(Context);
 
 
 
@@ -26,6 +30,8 @@ const handleOnErrorImg = (e) => {
          {props.text}
         </p>
       </div>
+      <button onClick={props.function} > <AiOutlineHeart className="like-off"/> </button>
+      
     </div>
   
 

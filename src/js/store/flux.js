@@ -4,9 +4,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 
 			people : [],
+			fav_people:[],
 			ships: [],
+			fav_ships:[],
 			films:[],
+			fav_films:[],
 			planets:[],
+			fav_planets:[],
 			next_page:"",
 
 		},
@@ -27,6 +31,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			  insertShips:(data) => {        
 				setStore({ ships: getStore().ships.concat(data.results), next_page: data.next });
 			  },
+			//   insertfavFilms:(fl)=>{
+			// 	setStore({fav_films: getStore().fav_films.concat(fl.title)});
+			//   }
 
 			
 		}

@@ -1,0 +1,31 @@
+button{
+    color: yellow;
+    
+    /* text-shadow: 
+    0 0 7px #fff,
+
+    0 0 20px rgb(0, 110, 150);
+   */
+    background:none;
+    font-family: 'Poller One', cursive;
+  
+}
+button:hover{
+    text-shadow: 
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(255, 0, 0),
+    0 0 82px rgb(255, 0, 0),
+    0 0 80px rgb(255, 0, 0),
+    0 0 102px rgb(255, 21, 0),
+    0 0 100px rgb(255, 0, 0);
+
+}
+.font-link {
+    font-family: 'Poller One', cursive;
+  }
+.logo{
+text-align: center;
+width: 300px;
+};

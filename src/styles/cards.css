@@ -15,3 +15,26 @@ box-shadow:
     0 0 102px rgb(255, 21, 0),
     0 0 100px rgb(255, 0, 0);
   }
+
+  .like-off{
+    justify-content: flex-end;
+    align-self: flex-end;
+    color: black;
+   margin-top: 5px;
+   padding-bottom: 5px;
+   width: 30px;
+   height: 25px;}
+
+  .like-on{
+    justify-content: flex-end;
+    align-self: flex-end;
+   
+   margin-top: 5px;
+   padding-bottom: 5px;
+   width: 30px;
+   height: 25px;
+    color:  red;
+  }
+  button{
+    border: none;
+  }

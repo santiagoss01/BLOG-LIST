@@ -7,9 +7,12 @@ import { Ships} from "./views/ships";
 import { Planets} from "./views/planets";
 import { Films } from "./views/films";
 import { People } from "./views/people";
+
 import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer";
+import { useEffect } from "react";
+
 
 
 //create your first component
@@ -30,10 +33,11 @@ const Layout = () => {
 						
 						<Route path="/planets" element={<Planets />} />
 						<Route path="/people" element={<People />} />
+						
 
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
-					<Footer />
+					{/* <Footer /> */}
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

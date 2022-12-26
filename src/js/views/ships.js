@@ -4,6 +4,8 @@ import{Spinner} from "../component/Spinner.jsx";
 
 import { Context } from "../store/appContext";
 
+import { Header } from "../component/Header.jsx";
+
 
 import "../../styles/demo.css";
 
@@ -45,6 +47,11 @@ export const Ships = () => {
  
    return (
   <>
+   <Header/>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
    {loading ? <Spinner/>:
  
    ships.map((sh, index)=>{
@@ -52,7 +59,7 @@ export const Ships = () => {
     
  
      return( 
-      <div className="container ml-8 d-flex my-10">
+      <div key={index} className="container ml-8 d-flex my-10">
       
       <Cards key={index} image={`https://starwars-visualguide.com/assets/img/starships/${index+1}.jpg`} title = {sh.name} text = {sh.model} />
     </div>)
