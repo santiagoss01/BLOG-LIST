@@ -9,6 +9,7 @@ import { Cards } from "../component/Cards.jsx";
 
 import "../../styles/demo.css";
 import "../../styles/cards.css";
+import { element } from "prop-types";
 
 const URL = "https://swapi.dev/api/";
 
@@ -18,7 +19,7 @@ export const Films = () => {
   
   const { store, actions } = useContext(Context);
   const [loading, setLoading] = useState(false);
-  const [visible, setVisible] = useState("");
+  const [visible, setVisible] = useState("invisible");
 
   const getfilms = async () => {
     
@@ -38,10 +39,24 @@ export const Films = () => {
   useEffect(() => {
     filmes.length === 0 ?
     getfilms(): null;
-  }, [getfilms]);
+  }, []);
 
+const handleLikes = (title,id)=>{
+  const newObj = [{title,id}];
+  store.favorites.some ((favorite)=> favorite.title === newObj[0].title) ?
+  null : actions.insertFavorites(newObj);
 
+};
+ const moreInfo = (id)=>{
+  
+  filmes.map((elem, identification)=>{
+    identification ===id ?
+     setVisible(""):
+     null;
+  })
  
+
+ };
 
   return (
     <>
@@ -63,10 +78,10 @@ export const Films = () => {
                 }.jpg`}
                 title={film.title}
                 text={film.director}
-                // function={actions.insertfavFilms(filmes,index)}
+               function={handleLikes(film,index)}
               />
               <div className="d-flex flex-column">
-              <button id="info" type="button" className="btn btn-outline ">More info...</button>
+              <button onClick={(e)=>{moreInfo(index)}} id="info" type="button" className="btn btn-outline ">More info...</button>
               <span className={"extraInfo "+ visible}>
                 <h5>Produced by : {film.producer}</h5>
                 <h5>Release date:{film.release_date}</h5>

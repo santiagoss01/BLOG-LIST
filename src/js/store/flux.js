@@ -4,13 +4,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 
 			people : [],
-			fav_people:[],
+			favorites:[],
 			ships: [],
-			fav_ships:[],
 			films:[],
-			fav_films:[],
 			planets:[],
-			fav_planets:[],
+			
 			next_page:"",
 
 		},
@@ -32,17 +30,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ ships: getStore().ships.concat(data.results), next_page: data.next });
 			  },
 			
-			  insertfavFilms:(filmes,index)=>{
-				filmes.map((fl,id)=>{ 
-					index === id? 
-					setStore({fav_films: getStore().fav_films.concat(fl.title)}):null
-				});
+			  insertFavorites:(data) => {        
+				setStore({ favorites: getStore().favorites.concat(data)});
+			  },
 				
 			 }
 
 			
 		}
 	};
-};
 
 export default getState;
