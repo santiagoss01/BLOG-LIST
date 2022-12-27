@@ -15,6 +15,7 @@ import{Cards}from "../component/Cards.jsx"
 export const Planets = () => {
  const {store, actions} = useContext(Context);
  const[loading, setLoading] = useState (false);
+ const [visible, setVisible] = useState("");
 
 
   
@@ -61,6 +62,18 @@ export const Planets = () => {
      return(
       <div key={index} className="container ml-8 d-flex my-10">
       <Cards image={`https://starwars-visualguide.com/assets/img/planets/${index+1}.jpg`}title = {pl.name} text = {pl.climate} />
+      <div className="d-flex flex-column align-items-center">
+              <button id="info" type="button" className="btn btn-outline ">More info...</button>
+              <span className={"extraInfo "+ visible}>
+                <h5>Rotation period : {pl.rotation_period}</h5>
+                <h5>Orbital period : {pl.orbital_period}</h5>
+                <h5>Gravity : {pl.gravity}</h5>
+                <h5>Terrain : {pl.terrain}</h5>
+                <h5>Population : {pl.population}</h5>
+                <h5>Surface water : {pl.surface_water}</h5>
+       
+              </span>
+              </div>
       </div>)
    })}
       <div className="text-center my-4">

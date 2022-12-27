@@ -18,6 +18,7 @@ export const People = () => {
   const {store, actions} = useContext(Context);
   
   const[loading, setLoading] = useState (false);
+  const [visible, setVisible] = useState("");
   
  
  
@@ -61,10 +62,23 @@ export const People = () => {
  
      return( 
       <div key={index} className="container ml-8 d-flex my-10">
-       <Cards image={`https://starwars-visualguide.com/assets/img/characters/${index+1}.jpg`}title = {char.name} text = {char.birth_year}
+       <Cards image={`https://starwars-visualguide.com/assets/img/characters/${index+1}.jpg`}title = {char.name} 
         />
+        <div className="d-flex flex-column align-items-center">
+              <button id="info" type="button" className="btn btn-outline ">More info...</button>
+              <span className={"extraInfo "+ visible}>
+                <h5>Hair color : {char.hair_color}</h5>
+                <h5>Gender : {char.gender}</h5>
+                <h5>Eye color : {char.eye_color}</h5>
+                <h5>Height : {char.height}</h5>
+                <h5>Mass: {char.mass}</h5>
+                <h5>birth_year: {char.birth_year}</h5>
+       
+              </span>
+              </div>
          
        </div>)
+       
    })}
    <div className="text-center my-4">
         <button

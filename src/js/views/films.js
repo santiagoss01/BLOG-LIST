@@ -18,6 +18,7 @@ export const Films = () => {
   
   const { store, actions } = useContext(Context);
   const [loading, setLoading] = useState(false);
+  const [visible, setVisible] = useState("");
 
   const getfilms = async () => {
     
@@ -35,16 +36,9 @@ export const Films = () => {
   //  const likedFilms = store.fav_people;
 
   useEffect(() => {
-    filmes.length == 0 ?
+    filmes.length === 0 ?
     getfilms(): null;
-  }, []);
-
-  // const addToliked = (index) => {
-  //   filmes.map((fl, id) => {
-  //       index === id ? actions.insertfavFilms(fl) : null;
-  //   });
-  // };
-
+  }, [getfilms]);
 
 
  
@@ -69,8 +63,19 @@ export const Films = () => {
                 }.jpg`}
                 title={film.title}
                 text={film.director}
-                // function={addToliked(index)}
+                // function={actions.insertfavFilms(filmes,index)}
               />
+              <div className="d-flex flex-column">
+              <button id="info" type="button" className="btn btn-outline ">More info...</button>
+              <span className={"extraInfo "+ visible}>
+                <h5>Produced by : {film.producer}</h5>
+                <h5>Release date:{film.release_date}</h5>
+                <h5>Episode id:{film.episode_id}</h5>
+                <h5>Opening Crawl:</h5>
+                <p>{film.opening_crawl}</p>
+                
+              </span>
+              </div>
             </div>
           );
         })

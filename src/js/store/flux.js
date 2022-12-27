@@ -31,9 +31,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			  insertShips:(data) => {        
 				setStore({ ships: getStore().ships.concat(data.results), next_page: data.next });
 			  },
-			//   insertfavFilms:(fl)=>{
-			// 	setStore({fav_films: getStore().fav_films.concat(fl.title)});
-			//   }
+			
+			  insertfavFilms:(filmes,index)=>{
+				filmes.map((fl,id)=>{ 
+					index === id? 
+					setStore({fav_films: getStore().fav_films.concat(fl.title)}):null
+				});
+				
+			 }
 
 			
 		}

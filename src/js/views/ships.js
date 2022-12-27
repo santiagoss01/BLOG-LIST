@@ -17,6 +17,7 @@ export const Ships = () => {
  
   const {store, actions} = useContext(Context);
  const[loading, setLoading] = useState (false);
+ const [visible, setVisible] = useState("");
   
  
  
@@ -61,7 +62,21 @@ export const Ships = () => {
      return( 
       <div key={index} className="container ml-8 d-flex my-10">
       
-      <Cards key={index} image={`https://starwars-visualguide.com/assets/img/starships/${index+1}.jpg`} title = {sh.name} text = {sh.model} />
+      <Cards image={`https://starwars-visualguide.com/assets/img/starships/${index+1}.jpg`} title = {sh.name} text = {sh.model} />
+     
+      <div className="d-flex flex-column align-items-center">
+              <button id="info" type="button" className="btn btn-outline ">More info...</button>
+              <span className={"extraInfo "+ visible}>
+              <h5>Manufacturer : {sh.manufacturer}</h5>
+                <h5>Starship-Class : {sh.starship_class}</h5>
+                <h5>Crew : {sh.crew}</h5>
+                <h5>Crew : {sh.crew}</h5>
+                <h5>Cost in credits : {sh.cost_in_credits}</h5>
+
+
+                
+              </span>
+              </div>
     </div>)
    })}
       <div className="text-center my-4">
