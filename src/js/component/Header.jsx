@@ -24,7 +24,7 @@ export const Header = () => {
   <button onClick={()=>navigate("/ships")} className="navbar-brand icon" href="#">
     <AiOutlineRocket/> ships </button>
     <button onClick={()=>navigate("/people")} className="navbar-brand icon" href="#">
-    <AiOutlineUser/> characters</button>
+    <AiOutlineUser/> people</button>
     <button onClick={()=>navigate("/planets")} className="navbar-brand icon" href="#">
     <BiPlanet/> planets </button>
     <button onClick={()=>navigate("/films")} className="navbar-brand icon" href="#">

@@ -6,6 +6,7 @@ import { Header } from "../component/Header.jsx";
 
 import { Context } from "../store/appContext";
 import { Cards } from "../component/Cards.jsx";
+import { Moreinfo } from "../component/Extrainfo.jsx";
 
 import "../../styles/demo.css";
 import "../../styles/cards.css";
@@ -19,7 +20,7 @@ export const Films = () => {
   
   const { store, actions } = useContext(Context);
   const [loading, setLoading] = useState(false);
-  const [visible, setVisible] = useState("invisible");
+ 
 
   const getfilms = async () => {
     
@@ -34,29 +35,19 @@ export const Films = () => {
   };
 
   const filmes = store.films;
-  //  const likedFilms = store.fav_people;
+
 
   useEffect(() => {
     filmes.length === 0 ?
     getfilms(): null;
   }, []);
 
-const handleLikes = (title,id)=>{
-  const newObj = [{title,id}];
-  store.favorites.some ((favorite)=> favorite.title === newObj[0].title) ?
-  null : actions.insertFavorites(newObj);
+  const favorites = store.favorites;
 
-};
- const moreInfo = (id)=>{
-  
-  filmes.map((elem, identification)=>{
-    identification ===id ?
-     setVisible(""):
-     null;
-  })
- 
+  console.log(favorites);
 
- };
+
+
 
   return (
     <>
@@ -78,19 +69,16 @@ const handleLikes = (title,id)=>{
                 }.jpg`}
                 title={film.title}
                 text={film.director}
-               function={handleLikes(film,index)}
+                id={index}
               />
-              <div className="d-flex flex-column">
-              <button onClick={(e)=>{moreInfo(index)}} id="info" type="button" className="btn btn-outline ">More info...</button>
-              <span className={"extraInfo "+ visible}>
-                <h5>Produced by : {film.producer}</h5>
-                <h5>Release date:{film.release_date}</h5>
-                <h5>Episode id:{film.episode_id}</h5>
-                <h5>Opening Crawl:</h5>
-                <p>{film.opening_crawl}</p>
-                
-              </span>
-              </div>
+               <Moreinfo
+               id={index}
+                // firstinfo={film.producer}
+                // secondinfo={film.release_date}
+                // thirdinfo={film.episode_id}
+                // fourthinfo="Opening Crawl:"
+                // optional={film.opening_crawl}
+              />
             </div>
           );
         })

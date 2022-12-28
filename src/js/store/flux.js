@@ -8,11 +8,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 			ships: [],
 			films:[],
 			planets:[],
+			visible:-1,
 			
 			next_page:"",
 
 		},
 		actions: {
+
+			setVisible:(index)=>{
+				console.log(getStore());
+				setStore({visible: index})
+				console.log(getStore());
+				console.log(index);
+				
+			 },
 
 			insertFilms: (data) => {        
 				setStore({ films: getStore().films.concat(data.results), next_page: data.next });
@@ -35,6 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			  },
 				
 			 }
+			
 
 			
 		}
