@@ -11,18 +11,22 @@ import "../../styles/demo.css";
 import { Cards } from "../component/Cards.jsx";
 import propTypes from "prop-types";
 
-const URL = "https://swapi.dev/api/";
+// let URL = "https://swapi.dev/api/";
 
 export const People = () => {
+
+
+
   const { store, actions } = useContext(Context);
 
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState("");
 
-  const getPeople = async () => {
+  const getPeople = async (url) => {
+
     setLoading(true);
 
-    const response = await fetch(`${URL}people/`);
+    const response = await fetch(url);
     const data = await response.json();
 
     actions.insertPeople(data);
@@ -33,7 +37,7 @@ export const People = () => {
   const characters = store.people;
 
   useEffect(() => {
-    getPeople();
+    getPeople(`https://www.swapi.tech/api/people`);
   }, []);
 
   return (

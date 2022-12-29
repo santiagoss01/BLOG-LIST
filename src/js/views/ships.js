@@ -13,7 +13,7 @@ import "../../styles/demo.css";
 
 import{Cards}from "../component/Cards.jsx"
 
- const URL = "https://swapi.dev/api/"
+
 
 export const Ships = () => {
  
@@ -23,11 +23,11 @@ export const Ships = () => {
   
  
  
- const getShips = async () =>{
+ const getShips = async (url) =>{
  
    setLoading (true);
  
- const response = await fetch(`${URL}starships/`);
+ const response = await fetch(url);
  const data = await response.json();
    
  actions.insertShips(data);
@@ -47,7 +47,7 @@ export const Ships = () => {
  
  
  useEffect(()=>{
-   getShips();
+   getShips("https://swapi.dev/api/starships/");
  
   },[]);
     
