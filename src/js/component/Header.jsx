@@ -6,8 +6,8 @@ import { BiPlanet} from "react-icons/bi";
 import { BiFilm} from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
-
-
+import { Context } from "../store/appContext";
+import{FavoritesList}from "./Favorite-list.jsx"
 
 
 
@@ -29,7 +29,8 @@ export const Header = () => {
     <BiPlanet/> planets </button>
     <button onClick={()=>navigate("/films")} className="navbar-brand icon" href="#">
     <BiFilm/> films </button>
-
+    <FavoritesList/>
+  
 </nav>
 </div>
 )

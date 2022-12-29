@@ -12,23 +12,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 			next_page:"",
 
+			
+
 		},
 		actions: {
 
 			setVisible:(index)=>{
-				console.log(getStore());
+				
 				setStore({visible: index})
-				console.log(getStore());
-				console.log(index);
+			
+				
 				
 			 },
 
+
+
 			insertFilms: (data) => {        
-				setStore({ films: getStore().films.concat(data.results), next_page: data.next });
+				setStore({ films: getStore().films.concat(data.results)});
 			  },
 			  
 			  insertPeople:(data) => {        
-				setStore({ people: getStore().people.concat(data.results), next_page: data.next });
+				setStore({ people: getStore().people.concat(data.results), next_page: data.next});
 			  },
 			 
 			  insertPlanets:(data) => {        
@@ -41,6 +45,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 			  insertFavorites:(data) => {        
 				setStore({ favorites: getStore().favorites.concat(data)});
+			  },
+			 
+			  deleteFavorites: (title) => {
+				setStore({
+				  favorites: getStore().favorites.filter((fav) => fav.title !== title),
+				});
 			  },
 				
 			 }

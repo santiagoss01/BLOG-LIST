@@ -73,11 +73,7 @@ export const Films = () => {
               />
                <Moreinfo
                id={index}
-                // firstinfo={film.producer}
-                // secondinfo={film.release_date}
-                // thirdinfo={film.episode_id}
-                // fourthinfo="Opening Crawl:"
-                // optional={film.opening_crawl}
+            
               />
             </div>
           );

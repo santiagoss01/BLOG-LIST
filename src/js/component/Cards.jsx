@@ -26,13 +26,7 @@ export const Cards = (props) => {
     null : actions.insertFavorites(newObj)};
 
 
-    // const moreInfo = (id)=>{
-  
-    //   [{props.element}].map((elem, identification)=>{
-    //     identification === id ?
-    //      setVisible(""):
-    //      null;
-    //   })};
+
 
 
 
@@ -45,7 +39,7 @@ export const Cards = (props) => {
         <p className="card-text">
           {props.text}
         </p>
-        <button><AiOutlineHeart onClick={(e)=>handleLikes(props.title, props.id)} className="like-off"/> </button>
+        <button id="heart"><AiOutlineHeart  onClick={(e)=>handleLikes(props.title, props.id)} className="like-off"/> </button>
       </div>
   
     </div>

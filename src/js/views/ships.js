@@ -6,6 +6,8 @@ import { Context } from "../store/appContext";
 
 import { Header } from "../component/Header.jsx";
 
+import { Moreinfoships} from "../component/Extrainfo-ships.jsx";
+
 
 import "../../styles/demo.css";
 
@@ -33,8 +35,12 @@ export const Ships = () => {
  setLoading (false);
  
  };
+
+ console.log(next_page);
  
+ const next_page = store.next_page;
  
+ console.log(next_page);
  
   const ships = store.ships;
  
@@ -63,22 +69,12 @@ export const Ships = () => {
       <div key={index} className="container ml-8 d-flex my-10">
       
       <Cards image={`https://starwars-visualguide.com/assets/img/starships/${index+1}.jpg`} title = {sh.name} text = {sh.model} />
-     
-      <div className="d-flex flex-column align-items-center">
-              <button id="info" type="button" className="btn btn-outline ">More info...</button>
-              <span className={"extraInfo "+ visible}>
-              <h5>Manufacturer : {sh.manufacturer}</h5>
-                <h5>Starship-Class : {sh.starship_class}</h5>
-                <h5>Crew : {sh.crew}</h5>
-                <h5>Crew : {sh.crew}</h5>
-                <h5>Cost in credits : {sh.cost_in_credits}</h5>
+     <Moreinfoships
+     id={index}/>
 
-
-                
-              </span>
-              </div>
     </div>)
    })}
+   
       <div className="text-center my-4">
         <button
           type="button"

@@ -24,20 +24,15 @@ box-shadow:
    padding-bottom: 5px;
    width: 30px;
    height: 25px;}
+   .like-off:hover{
+    color: red;
+   }
 
-  .like-on{
-    justify-content: flex-end;
-    align-self: flex-end;
-   
-   margin-top: 5px;
-   padding-bottom: 5px;
-   width: 30px;
-   height: 25px;
-    color:  red;
-  }
+
   button{
     border: none;
   }
+
 #info{
   color: yellow;
   width: 500px;
@@ -50,3 +45,10 @@ box-shadow:
     color: yellow;
   };
 
+#heart:hover{
+background-color: red;
+
+}
+#delete{
+  color: black;
+}
