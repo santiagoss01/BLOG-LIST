@@ -53,10 +53,7 @@ export const People = () => {
         characters.map((char, index) => {
           return (
             <div key={index} className="container ml-8 d-flex my-10">
-              <Cards
-                image={`https://starwars-visualguide.com/assets/img/characters/${
-                  index + 1
-                }.jpg`}
+              <Cards image={`https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`}
                 title={char.name}
                 id={index}
               />

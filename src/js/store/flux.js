@@ -32,7 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			  },
 			  
 			  insertPeople:(data) => {        
-				setStore({ people: getStore().people.concat(data.results), next_page: getStore().next_page.concat(data.next)});
+				setStore({ people: getStore().people.concat(data.results), next_page: data.next});
 			  },
 			 
 			  insertPlanets:(data) => {        
