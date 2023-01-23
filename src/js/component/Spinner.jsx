@@ -9,10 +9,7 @@ return(
     <div id="Spinner_container" className=" d-flex flex-column text-center justify-content-center align-items-center">
 
 <BiPlanet className="Spinner "/>
-<br />
-<br />
-<br />
-<h6>Loading...</h6>
+<h3>Loading...</h3>
 </div>
 
 )

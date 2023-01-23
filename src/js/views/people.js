@@ -43,10 +43,6 @@ export const People = () => {
   return (
     <>
       <Header />
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       {loading ? (
         <Spinner />
       ) : (

@@ -20,24 +20,31 @@ box-shadow:
     justify-content: flex-end;
     align-self: flex-end;
     color: black;
-   margin-top: 5px;
-   padding-bottom: 5px;
-   width: 30px;
-   height: 25px;}
-   .like-off:hover{
+    margin-top: 5px;
+    padding-bottom: 5px;
+    width: 30px;
+    height: 25px;}
+    .like-off:hover{
     color: red;
-   }
+    }
 
 
   button{
     border: none;
+    outline-style: none;
   }
 
-#info{
+ 
+ 
+
+  #info,
+  #info:hover{
   color: yellow;
   width: 500px;
   height: 30px;
-  margin-top: 20px;}
+  margin-top: 20px;
+  box-shadow: none !important;}
+
 
   .extraInfo{
     margin-top: 50px;
@@ -45,10 +52,11 @@ box-shadow:
     color: yellow;
   };
 
-#heart:hover{
-background-color: red;
+ #heart:hover{
+ background-color: red;
 
-}
-#delete{
+ }
+
+ #delete{
   color: black;
-}
+ }

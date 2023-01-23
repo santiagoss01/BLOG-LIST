@@ -52,10 +52,6 @@ export const Films = () => {
   return (
     <>
     <Header/>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
       {loading ? (
         <Spinner />
       ) : (

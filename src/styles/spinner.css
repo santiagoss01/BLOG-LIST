@@ -1,5 +1,6 @@
 .Spinner{
     color: yellow;
+    margin-top: 150px;
 
 
 
@@ -32,8 +33,8 @@
     height: 500px;
 }
 
-h6{
+h3{
     color: yellow;
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 80px;
 }

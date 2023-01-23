@@ -50,10 +50,6 @@ export const Planets = () => {
    return (
   <>
    <Header/>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
    {loading ? <Spinner/>:
  
    planets.map((pl, index)=>{

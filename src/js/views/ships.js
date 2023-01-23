@@ -55,10 +55,6 @@ export const Ships = () => {
    return (
   <>
    <Header/>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
    {loading ? <Spinner/>:
  
    ships.map((sh, index)=>{

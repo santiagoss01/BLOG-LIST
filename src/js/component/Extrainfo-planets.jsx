@@ -15,6 +15,14 @@ const {store, actions} = useContext(Context);
 
 return (<div className="d-flex flex-column justify-content-arround">
 <button onClick={(e)=>actions.setVisible(props.id)}  id="info" type="button" className="btn btn-outline ">More info...</button>
+<button
+        onClick={(e) => actions.setVisible(-1)}
+        id="info"
+        type="button"
+        className="btn"
+      >
+       ...Show less
+      </button>
 <span className={store.visible === props.id? "extraInfo "+ "": "extraInfo invisible"}>
   <h5>Rotation period : {store.planets[props.id].rotation_period}</h5>
   <h5>Terrain : {store.planets[props.id].terrain}</h5>

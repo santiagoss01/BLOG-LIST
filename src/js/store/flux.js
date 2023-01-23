@@ -18,10 +18,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 
 			setVisible:(index)=>{
-				
+
 				setStore({visible: index})
-			
-				
 				
 			 },
 
